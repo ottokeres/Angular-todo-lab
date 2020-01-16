@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let toDo of toDoList, let i=index"  id="todo">
+        {{i+1}}. <button id="complete-icon" *ngIf="!toDo.completed" >Complete</button>
+        <div class="todo-text" [class.completed]="toDo.completed">{{toDo.task}}</div>
+        <button id="remove-todo-icon">X</button>
+    </li>
+</ul>
+
