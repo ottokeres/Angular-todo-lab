@@ -11,21 +11,32 @@ interface ITodo {
   styleUrls: ['./todo.component.css']
 })
 
-export class TodoComponent implements ITodo {
+export class TodoComponent implements ITodo{
 
   @Input() completed: boolean;
   @Input() task: string; 
 
-  toDoList=[
-    {task:'pay bills', completed: true},
-    {task:'grocery shop', completed: false},
-    {task:'laundry', completed: true},
-    {task:'go to work', completed: false}
-  ]; 
+
+  toDoList=[]; // initialized empty array
 
   constructor() { 
    }
 
   ngOnInit() {
   }
+
+  addTask() {  
+      this.toDoList.push({task:this.task, completed:false});
+  }
+
+  removeTask(i){
+    this.toDoList.splice(i,1);
+  }
+
+  completeTask(i){
+    this.toDoList[i].completed=true; 
+  }
+
+
+
 }

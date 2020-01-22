@@ -1,8 +1,13 @@
 <ul>
-    <li *ngFor="let toDo of toDoList, let i=index"  id="todo">
-        {{i+1}}. <button id="complete-icon" *ngIf="!toDo.completed" >Complete</button>
+    <li *ngFor="let toDo of toDoList, let i=index" id="todo">
+        {{i+1}}. <button id="complete-icon" *ngIf="!toDo.completed" (click)="completeTask(i)">Complete</button>
         <div class="todo-text" [class.completed]="toDo.completed">{{toDo.task}}</div>
-        <button id="remove-todo-icon">X</button>
+        <button id="remove-todo-icon" (click)="removeTask(i)">X</button>
     </li>
 </ul>
+<div id="input-container">
+    <input id="add-todo" placeholder="Add your to-do" type="text" [(ngModel)]="task"/>
+    <button class="add" (click)="addTask()">Add</button>
+</div>
+
 
