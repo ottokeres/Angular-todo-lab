@@ -27,6 +27,7 @@ export class TodoComponent implements ITodo{
 
   addTask() {  
       this.toDoList.push({task:this.task, completed:false});
+      this.task='';
   }
 
   removeTask(i){
@@ -37,6 +38,5 @@ export class TodoComponent implements ITodo{
     this.toDoList[i].completed=true; 
   }
 
-
-
 }
+

@@ -29,9 +29,3 @@ h1 {
     width: 50em; 
 }
 
-#filter-todo {
-    border: 1px solid #bbb;  
-    border-radius: 0.25em; 
-    height: 2rem;
-    padding: 0.5em; 
-}

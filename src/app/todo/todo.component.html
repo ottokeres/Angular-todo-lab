@@ -1,5 +1,8 @@
+<div class="input">
+    <input id="filter-todo" placeholder="Filter your to-do's" [(ngModel)]="searchTask"/>
+</div>
 <ul>
-    <li *ngFor="let toDo of toDoList, let i=index" id="todo">
+    <li *ngFor="let toDo of toDoList | filter:'task':searchTask, let i=index" id="todo" >
         {{i+1}}. <button id="complete-icon" *ngIf="!toDo.completed" (click)="completeTask(i)">Complete</button>
         <div class="todo-text" [class.completed]="toDo.completed">{{toDo.task}}</div>
         <button id="remove-todo-icon" (click)="removeTask(i)">X</button>
